@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>teste de video</title>
+</head>
+<body>
+
+    <Video id="video" width="420" height="375" controls>
+        <source src="videos/DOUTOR ESTRANHO NO MULTIVERSO DA LOUCURA - COISAS QUE EU NÃO FARIA.mp4" type="video/mp4">
+        
+    </Video>
+    <br>
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="MakeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+    <button onclick="rapido()">-5</button>
+    <button onclick="devagar()">+5</button>
+    <button onclick="inicio()">inicio</button>
+    
+
+
+    <!-- Js -->
+    <script>
+    var myVideo = document.querySelector('#video')
+
+    // funções
+
+    function playPause(){
+        if(myVideo.paused)
+        myVideo.play();
+        else 
+        myVideo.pause();
+
+    }
+
+    function makeBig(){
+        myVideo.width = 620
+    }
+
+    function MakeSmall(){
+        myVideo.width = 500
+    }
+
+    function makeNormal(){
+        myVideo.width = 420
+    }
+
+    function rapido(){
+        if(!myVideo.fastSeek)
+        myVideo.currentTime -=5;
+      
+    }
+    function devagar(){
+        if(!myVideo.fastSeek)
+        myVideo.currentTime +=5;
+      
+    }
+
+    function inicio(){
+        if(!myVideo.fastSeek)
+        myVideo.currentTime =0;
+      
+    }
+
+        
+</script>
+</body>
+</html>
